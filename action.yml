@@ -1,0 +1,17 @@
+name: Encrypt
+description: 'Encrypt some data'
+inputs:
+  public-key:
+    description: 'Public key to encrypt with'
+  payload:
+    description: 'Data to encrypt'
+outputs:
+  encrypted-data:
+    description: 'Encrypted data'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.public-key }}
+    - ${{ inputs.payload }}
+
